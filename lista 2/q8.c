@@ -1,26 +1,23 @@
-
 #include <stdio.h>
 #include <math.h>
 
-float cambioDollar(float a){
-    float valorDollar = 4.95;
-    return a/valorDollar;
-};
-
-float cambioEuro( float a) {
-    float valorEuro = 5.37;
-    return a/valorEuro;
-};
+  void cambio (float r, float *dollar,  float *euro) { 
+    *dollar = r/4.95;
+    *euro = r/5.37;
+}
 
 int main() {
-    
-    float v;
-    // Write C code here
-    printf("quanto em reais deseja realizar o cambio? \n");
-    scanf("%f" , &v);
-    
-    printf("O valor em dollar é; %.2f \n" , cambioDollar(v));
-    printf("O valor em euro é: %.2f \n " , cambioEuro(v));
 
+   float real;
+   float dollar1;
+   float euro1;
+   
+    printf("quanto em reais deseja realizar o cambio? \n");
+    scanf("%f" , &real);
+    
+    cambio( real, &dollar1, &euro1);
+    
+    printf("O valor em dollar é; %.2f \n" , dollar1);
+    printf("O valor em euro é: %.2f \n " , euro1);
     return 0;
 }
