@@ -15,3 +15,29 @@ distribuição das castrações entre os veterinários. Vale
 esclarecer que se capturados 4 ou menos gatos, as castrações
 ficam sob a responsabilidade de todos os veterinários, em
 conjunto.*/
+
+#include <stdio.h>
+
+float castracoes (int a) {
+    if (a % 4 <0) {
+        printf("Todos os veterinarios ficarão responsáveis, pois o numero de animais é pequeno demais para a distribuição correta entre eles");
+        return; }
+    else if (a%4 ==0) {
+        printf("Cada veterinário experiente ficará com %d cirurgias e o recém formado não fará nenhuma", a/4);
+        return;}
+    else {
+        printf("Cada veterinário experiente ficará com %d cirurgias e o recém formado fará %d cirurgias", a/4, a%4);
+        return;
+    }
+        
+}
+int main() {
+  
+    int gatosCapturados;
+    
+    printf("Quantos gatos foram capturados?\n");
+    scanf("%d", &gatosCapturados);
+    
+    return castracoes(gatosCapturados);
+
+}
