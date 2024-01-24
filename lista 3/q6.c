@@ -29,7 +29,25 @@ int main() {
     
     printf("Qual a sua altura? \n");
     scanf("%f", &altura);
-    
-    printf("seu IMC é %.2f", calcIMC(peso, altura));
-    return 0;
+   
+   float IMC = calcIMC(peso, altura);
+   
+  if (IMC<18.5) {
+      printf("magreza");
+  }
+  else if (IMC < 24.9)  {
+      printf("normal");
+  }
+  else if (IMC < 29.9) {
+      printf("obesidade grau 1");
+  }
+  else if (IMC < 39.9)  {
+      printf("obesidade grau 2");
+  }
+  else  {
+      printf("obesidade grau 3 / obesidade morbida");
+  }
+  
+  return 0;
 }
+
