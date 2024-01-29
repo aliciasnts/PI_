@@ -19,45 +19,46 @@ int perimetro (int a) {
 };
 
 float diagonal (int a) {
-    int potencia;
-    potencia = pow(a,2);
-    int mult;
-    mult = 2*potencia;
-    int raiz;
-    raiz = sqrt(mult);
-    return raiz;
+    return sqrt(2*(pow(a,2)));
 };
 
 int main() {
     
-    int numero;
+    int operador;
     int lado;
    
     printf("1 – Área\n");
     printf("2 – Perímetro\n");
     printf("3 – Diagonal\n");
     
-    scanf("%d" , &numero);
-    
+    scanf("%d" , &operador);
+     
+     
     printf("Qual a medida do lado do triangulo,em centimetros?\n");
     scanf("%d" , &lado);
+
+//usando if else
     
-     if (numero == 1) {
+    /*if (numero == 1) {
         printf ("A área do quadrado é %d centimetros quadrados" , area(lado));
     }
     else if (numero == 2) {
         printf("O perímetro do quadrado é %d centimetros quadrados" , perimetro(lado));
     }
     else if (numero == 3) {
-        printf("A diagonal do quadrado é %d centimetros quadrados", diagonal(lado));
+        printf("A diagonal do quadrado é aproximadamente %.2f centimetros quadrados", diagonal(lado));
     }
     else {
         printf("A opção selecionada não é válida.");
     }
+    */
+
+// usando switch case
     
+    switch (operador) {
+        case 1: printf ("A área do quadrado é %d centímetros quadrados" , area(lado)); break;
+        case 2: printf("O perímetro do quadrado é %d centímetros quadrados" , perimetro(lado)); break;
+        case 3: printf("A diagonal do quadrado é aproximadamente %.2f centímetros quadrados", diagonal(lado)); break;
+    }
     return 0;
 } 
-
-
-
-//TA ERRADO
