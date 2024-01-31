@@ -3,13 +3,13 @@
 void analisePH (float pH) {
   
     if (pH < 7) {
-        printf("\nACIDA"); } 
+        printf("ACIDA \n"); } 
         
     else if (pH > 7) {
-    printf("\nBASICA");} 
+    printf("BASICA\n");} 
     
     else {
-    printf("\nNEUTRA");} 
+    printf("NEUTRA\n");} 
     
 }
 
