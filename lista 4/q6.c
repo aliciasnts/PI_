@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-
-
 int main() {
   
   float notaPort, notaMat, notaReda, aprovados;
@@ -18,8 +16,9 @@ int main() {
     printf("Digite a sua nota na prova de redação:");
     scanf("%f" , &notaReda);
   
-    if (acertos_portugues >= 0.8 * 50 && acertos_matematica >= 0.6 * 35 && nota_redacao >= 7) {
-    candidatos_aprovados++;
+    if (notaPort >= 0.8 * 50 && notaMat >= 0.6 * 35 && notaReda >= 7) {
+    aprovados++;}
     
-  }
-
+    printf("%.0f candidato(s) foram aprovados" , aprovados);
+    return 0 ;
+}};
