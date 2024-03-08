@@ -11,3 +11,23 @@ Pagamento em 3 meses – Juros: R$100,00 – Total – R$1.300 – Parcela 3 x R
 Pagamento em 4 meses – Juros: R$100,00 –Total – R$1.400 – Parcela 4 x R$350,33
 ...
 Pagamento em 10 meses – Juros: R$100,00 –Total – R$2.000 – Parcela 10 x R$200,00*/
+
+#include <stdio.h>
+#include <math.h>
+float calcularJuros(float valor){
+    valor/100;
+}
+float total (float valor, float mes) {
+    (valor/100)*mes;
+}
+float parcela( float)
+
+int main() {
+    
+    float valorCompra, int parcelamento;
+    
+     for (mes=0; mes <=10; mes++) {
+        
+        valor/100;}}}
+    
+    return;}
