@@ -10,27 +10,29 @@ menor que o peso almejado. Aplicar for.*/
 #include <stdio.h>
 #include <math.h>
 float calcular( float inicial, float final){
+    int mes;
     if (final>inicial) {
         printf("Erro: o peso final é maior do que o inicial.");
     }
     else{
-        float a = (inicial-final)/5;
-        for (int i=0; i>=a; i++) {
-            (int) a 
-        }
-    }
-    
-}
+        for (mes=0; inicial>=final; mes++) {
+            printf("No mês %d, o peso atingido foi %1.f \n", mes, inicial);
+            inicial-=5;}}}
+
 
 int main() {
     
     float pesoInicial, pesoFinal;
+    int mes;
     
     printf("Qual o seu peso atual?\n");
     scanf("%f", &pesoInicial);
     printf("Qual peso deseja alcançar ao fim da dieta?\n");
     scanf("%f" , &pesoFinal);
 
-printf("%f", calcular(pesoInicial, pesoFinal));
-    return 0;
-}
+    calcular(pesoInicial, pesoFinal);
+
+    if (pesoFinal >0 && ((int) pesoFinal % 5) > 0){
+    printf("Peso do mês incompleto = %.1f \n", pesoFinal);}
+
+    return;}
