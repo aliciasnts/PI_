@@ -14,20 +14,32 @@ Pagamento em 10 meses – Juros: R$100,00 –Total – R$2.000 – Parcela 10 x 
 
 #include <stdio.h>
 #include <math.h>
+
 float calcularJuros(float valor){
-    valor/100;
-}
-float total (float valor, float mes) {
-    (valor/100)*mes;
-}
-float parcela( float)
+    return valor/100;}
+    
+float total (float valor, int mes) {
+    return (valor/100)+valor;}
+    
+float parcela(float valor, int mes) {
+    return (((valor/100)+valor)/mes);}
 
 int main() {
     
-    float valorCompra, int parcelamento;
+    float valorCompra, totalCompra;
+    int meses;
     
-     for (mes=0; mes <=10; mes++) {
-        
-        valor/100;}}}
+    printf("Qual o valor da sua compra?\n");
+    scanf("%f" , &valorCompra);
     
-    return;}
+    if (valorCompra<300) {
+        printf("Parcelamento unico de %.2f", valorCompra);
+    }
+    else {
+    printf("Opções de parcelamento:\n\n");
+    
+     for (meses=1; meses <=10; meses++) {
+         printf("Pagamento em %d meses – Juros: R$ %.2f –Total – %.2f – Parcela %d x R$%.2f\n\n", meses, calcularJuros(valorCompra), total(valorCompra, meses) , meses, parcela(valorCompra, meses) );}}
+         
+         return 0;
+       }
