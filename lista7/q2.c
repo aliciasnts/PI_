@@ -16,18 +16,18 @@ ctype.h. */
 #include <ctype.h>
 
 int main () {
-    char palavra[21];
+    char palavraUsuario[21];
   
     printf ("Insira uma palavra:\n");
-    scanf ("%20s",palavra);
+    scanf ("%20s",palavraUsuario);
   
-palavra[0] = toupper(palavra[0]);
+palavraUsuario[0] = toupper(palavraUsuario[0]);
 
-    for (int i = 1 ; palavra[i] !='\0'; i++) 
+    for (int i = 1 ; palavraUsuario[i] !='\0'; i++) 
   
-    palavra[i] = tolower(palavra[i]);
+    palavraUsuario[i] = tolower(palavraUsuario[i]);
     
   
-    printf ("Palavra editada:: %s\n" , palavra);
+    printf ("Palavra editada:: %s\n" , palavraUsuario);
   
 }
