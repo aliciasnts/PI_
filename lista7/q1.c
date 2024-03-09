@@ -7,3 +7,18 @@ Escrever programa para ler uma palavra com até 20
 caracteres e exibi-la com letras maiúsculas.
 Exemplos: dado brasileiro, retorna BRASILEIRO.
 Dado Nordeste, retorna NORDESTE*/
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char palavra[21]; //contando com o caracter nulo
+
+    printf("Digite uma palavra com até 20 caracteres: ");
+    scanf("%20s", palavra);
+  
+    for(int i = 0; palavra[i] != '\0'; i++) {
+        palavra[i] = toupper(palavra[i]);}
+  
+    printf("Palavra em maiúsculas: %s\n", palavra);
+
+    return 0;}
