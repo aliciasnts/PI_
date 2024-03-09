@@ -4,3 +4,38 @@ para ler N números inteiros e positivos e de cada
 um desses apresente o fatorial. O cálculo do fatorial
 deve ser efetuado por meio de função elaborada
 pelo programador.*/
+
+#include <stdio.h>
+#include <math.h>
+
+int calcularFatorial(int num) {
+    int fatorial = 1;
+
+    // Loop para calcular o fatorial
+    for (int i = 1; i <= num; i++) {
+        fatorial *= i;}
+
+    return fatorial;}
+
+int main() {
+    int N;
+
+    // Solicita o número de valores a serem lidos
+    printf("Quantos números inteiros e positivos deseja calcular?");
+    scanf("%d", &N);
+
+    // Loop para ler e calcular o fatorial de cada número
+    for (int ind = 0; ind < N; ind++) {
+        int num;
+        printf("Digite o número %d: ", ind + 1);
+        scanf("%d", &num);
+
+        // Verifica se o número é positivo
+        if (num < 0) {
+            printf("O número deve ser positivo.\n");
+        } else {
+            // Calcula o fatorial usando a função personalizada
+            int fatorial = calcularFatorial(num);
+           printf("O fatorial de %d é: %d\n", num, fatorial);}}
+
+    return 0;}
