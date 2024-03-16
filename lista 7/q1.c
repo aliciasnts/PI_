@@ -1,5 +1,3 @@
-
-
 /*Implementar programa para ler total de vendas, de um
   determinado mês, dos 300 vendedores da “Matura”,
   calcular a média de vendas do grupo de vendedores, e
