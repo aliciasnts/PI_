@@ -8,12 +8,11 @@ a 1 hora)*/
 #include <string.h>
 #include <ctype.h>
 
-// Declaração de variáveis globais
+
 char Estaciona[30][14]; // Matriz para armazenar informações sobre as vagas do estacionamento
-float Valor; // Valor do estacionamento por hora de uso
+float Valor;
 char Responsavel[21], Iniciou = 0; // Responsável pelo estacionamento e flag indicando se o caixa foi aberto
 
-// Função para abrir o caixa do estacionamento
 void AbrirCaixa() {
   
     system("cls"); 
