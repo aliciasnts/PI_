@@ -1,35 +1,70 @@
-/*Na disciplina “Programação Imperativa” há 50 alunos e 12
-avaliações. Para obtenção de aprovação o aluno deve ter no
-mínimo 5 notas maior ou igual a 7. Escrever programa para
-ler notas de cada um dos 50 alunos e identificar se foi
-aprovado.*/
+/*Escrever programa para ler o nome de uma pessoa,
+composto por nome e sobrenome (entre nome e
+sobrenome há um espaço em branco). E exibir,
+sobrenome em maiúsculo, seguido de vírgula e do nome
+da pessoa. Efetuar essa operação para tantas entradas quantas
+o usuário desejar.*/
+
 #include <stdio.h>
-#include <math.h>
+#include <ctype.h>
+#include <string.h>
+
+
+char* separarNome (char str[]){
+    char palavra [21];
+    for (int i = 0 ; ; i++){
+    palavra[i] = str [i];
+
+    if (str[i] == ' '){
+        palavra[i] = '\0';
+        strcpy(str,palavra);
+        return str;}}}
+
+
+void formataNome(char nome[]) {
+    nome[0] = toupper(nome[0]); // Transforma a primeira letra do nome em maiúscula
+    
+     for (int i = 1; nome[i] != '\0'; i++) {
+        nome[i] = tolower(nome[i]);}} // Transforma as letras restantes do nome em minúsculas
+   
+
 
 int main() {
-    int alunosAprovados = 0;
+    
+    char continuar; 
+    char nome [21];
+    char sobrenome [21];
 
-    // Loop para cada aluno
-    for (int aluno = 1; aluno <= 50; aluno++) {
-        int notasMaiorSete = 0;
+    do {
+        printf("Digite o nome completo (nome sobrenome):");
+        scanf("%[^\n]",nome); 
 
-        // Loop para cada avaliação
-        for (int avaliacao = 1; avaliacao <= 12; avaliacao++) {
-            float nota;
-            printf("Digite a nota do aluno %d na avaliação %d: ", aluno, avaliacao);
-            scanf("%f", &nota);
+        int posicao = -1;
+        for (int i = 0; nome[i] != '\0'; i++) {
+            if (nome[i] == ' ') {
+                posicao = i;
+                break;}}
 
-            if (nota >= 7.0) {
-                notasMaiorSete++;}}
+        if (posicao == -1) {
+            printf("Formato inválido. Por favor, insira nome e sobrenome separados por um espaço.\n");
+            continue;}
 
-        // Verificar se o aluno foi aprovado ou não
-        if (notasMaiorSete >= 5) {
-            printf("\nO aluno %d foi aprovado!\n\n", aluno);
-            alunosAprovados++;} 
-            else {
-            printf("\nO aluno %d foi reprovado.\n\n", aluno);}}
+      //seleciona o sobrenome
+      strcpy(sobrenome, &nome[posicao + 1]);
 
-    printf("\nTotal de alunos aprovados: %d\n", alunosAprovados);
+      // sobrenome pra maiuscula
+      for(int i = 0; sobrenome[i] != '\0'; i++) {
+          sobrenome[i] = toupper(sobrenome[i]);}
+          
+      formataNome(nome);
+      separarNome(nome);
 
-    return 0;
-}
+        // exibição das funções
+        printf("%s, %s\n", sobrenome, nome);
+
+        // continuação
+        printf("Deseja verificar outro nome?\ns = Sim\nn = Não\n");
+        scanf(" %c", &continuar);
+        getchar();
+    } while(continuar == 's' || continuar == 'S');
+    return 0;}
