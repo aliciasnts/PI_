@@ -8,9 +8,9 @@ carros no estacionamento, exibir alerta ao utilizador.*/
 #include <string.h>
 #include <ctype.h>
 
-// Variáveis globais
+
 char Estaciona[30][14]; // Matriz para armazenar informações sobre as vagas do estacionamento
-float Valor; // Valor do estacionamento por hora de uso
+float Valor; 
 char Responsavel[21], Iniciou = 0; // Responsável pelo estacionamento e flag indicando se o caixa foi aberto
 int QuantidadePorHora[15] = {0}; // Array para armazenar a quantidade de carros por hora
 
