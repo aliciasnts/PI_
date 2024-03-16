@@ -1,45 +1,31 @@
-/*Na loja de Sr. Zé compras acima de R$300,00 podem ser parceladas em
-até 10 vezes, para tanto são aplicados juros simples de 10% ao mês,
-conforme o número de meses. Dado valor da compra, exibir o valor total
-e o valor das parcelas. Aplicar for e função.
-
-Exemplo:
-Compra R$1.000,00
-Pagamento em 1 mês – Juros: R$100,00 – Total: R$1.100 – Parcela1 x R$ 1.100,00
-Pagamento em 2 meses – Juros: R$100,00 – Total – R$1.200 – Parcela 2 x R$600,00
-Pagamento em 3 meses – Juros: R$100,00 – Total – R$1.300 – Parcela 3 x R$433,33
-Pagamento em 4 meses – Juros: R$100,00 –Total – R$1.400 – Parcela 4 x R$350,33
-...
-Pagamento em 10 meses – Juros: R$100,00 –Total – R$2.000 – Parcela 10 x R$200,00*/
+/* Escrever programa para ler um nome e, independente
+de como este foi escrito, exibir a inicial maiúscula e o
+restante minúscula. Sendo:
+● Cadeia[P] = toupper(Cadeia[P]);
+Converte a letra da posição P da string
+Cadeia para maiúscula, da biblioteca
+ctype.h.
+● Cadeia[P] = tolower(Cadeia[P]);
+Converte a letra da posição P da string
+Cadeia para minúscula, da biblioteca
+ctype.h. */
 
 #include <stdio.h>
-#include <math.h>
+#include <ctype.h>
 
-float calcularJuros(float valor){
-    return valor/100;}
-    
-float total (float valor, int mes) {
-    return (valor/100)+valor;}
-    
-float parcela(float valor, int mes) {
-    return (((valor/100)+valor)/mes);}
+int main () {
+    char palavraUsuario[21];
+  
+    printf ("Insira uma palavra:\n");
+    scanf ("%20s",palavraUsuario);
+  
+palavraUsuario[0] = toupper(palavraUsuario[0]);
 
-int main() {
+    for (int i = 1 ; palavraUsuario[i] !='\0'; i++) 
+  
+    palavraUsuario[i] = tolower(palavraUsuario[i]);
     
-    float valorCompra, totalCompra;
-    int meses;
-    
-    printf("Qual o valor da sua compra?\n");
-    scanf("%f" , &valorCompra);
-    
-    if (valorCompra<300) {
-        printf("Parcelamento unico de %.2f", valorCompra);
-    }
-    else {
-    printf("Opções de parcelamento:\n\n");
-    
-     for (meses=1; meses <=10; meses++) {
-         printf("Pagamento em %d meses – Juros: R$ %.2f –Total – %.2f – Parcela %d x R$%.2f\n\n", meses, calcularJuros(valorCompra), total(valorCompra, meses) , meses, parcela(valorCompra, meses) );}}
-         
-         return 0;
-       }
+  
+    printf ("Palavra editada:: %s\n" , palavraUsuario);
+  
+}
