@@ -7,18 +7,18 @@
 
 // Definição da estrutura para armazenar os dados de uma moto
 struct RegMoto {
-    char Nome[20];
-    char Modelo[10];
-    char Placa[8]; // Corrigido para 8 para acomodar os 7 caracteres da placa e o caractere nulo '\0'
-    char Defeito[50];
-    char Status;
-    float Preco;
+    char Nome[20];      // Nome do cliente
+    char Modelo[10];    // Modelo da moto
+    char Placa[8];      // Placa da moto (7 caracteres + '\0')
+    char Defeito[50];   // Descrição do defeito
+    char Status;        // Status do serviço (0 - Solicitação, 1 - Serviço iniciado, 2 - Solicitação removida, 3 - Serviço concluído)
+    float Preco;        // Preço do serviço
 };
 
 typedef struct RegMoto TpRegMoto;
 
-TpRegMoto VZonda[MAX_MOTOS]; // Vetor para armazenar os dados das motos
-int Quant = 0; // Contador para controlar o número de motos cadastradas
+TpRegMoto VZonda[MAX_MOTOS];        // Vetor para armazenar os dados das motos
+int Quant = 0;                       // Contador para controlar o número de motos cadastradas
 char placasUtilizadas[MAX_MOTOS][8]; // Vetor para armazenar as placas já utilizadas
 
 // Função para verificar se uma placa já foi cadastrada
